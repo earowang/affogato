@@ -43,7 +43,7 @@ opts_chunk$set(warning = FALSE, message = FALSE,
 			   fig.path = 'figure/', cache.path = 'cache/', 
 			   fig.align = 'center', dev = 'png', fig.width = 15, fig.height = 8, 
 			   fig.show = 'hold', cache = FALSE, external = TRUE,
-         dev = 'Cairo_png')
+         dev = 'CairoPNG')
 read_chunk('../scriptsR/interactive.R')
 ```
 
@@ -53,7 +53,7 @@ read_chunk('../scriptsR/interactive.R')
 ```{r leaflet, echo = FALSE, fig.width = 18}
 ```
 
-# A glimpse at pedestrian traffic
+## A glimpse at pedestrian traffic
 
 ```{r plotly, echo = FALSE}
 ```
@@ -61,12 +61,11 @@ read_chunk('../scriptsR/interactive.R')
 ```{r gg-ts, echo = FALSE, fig.width = 18}
 ```
 
-```{r gg-line, echo = FALSE, fig.width = 18}
-```
-
 # Interactivity %>% let data walk, stretch, and dance
 
-<!-- ![](figure/robot_dance.gif) -->
+<center>
+![](figure/robot_dance.gif)
+</center>
 
 Most movements/interactions can be formulated into algebra.
 $$
@@ -119,23 +118,23 @@ $$
 ![](figure/facet-shift.gif)
       </center>
 
-## Manage data or movements?
-
-* Incremental 
-  $$
-  (\mathbf{x, y})_{s_{t + 1}} = (\mathbf{x, y})_{s_{t}} + \mathbf{m}_{i1}
-  $$
-* Baseline 
-  $$
-  (\mathbf{x, y})_{s_{t + 1}} = (\mathbf{x, y})_{s_{0}} + \sum_{i, j}\mathbf{m}_{ij}
-  $$
+<!-- ## Manage data or movements? -->
+<!--  -->
+<!-- * Incremental  -->
+<!--   $$ -->
+<!--   (\mathbf{x, y})_{s_{t + 1}} = (\mathbf{x, y})_{s_{t}} + \mathbf{m}_{i1} -->
+<!--   $$ -->
+<!-- * Baseline  -->
+<!--   $$ -->
+<!--   (\mathbf{x, y})_{s_{t + 1}} = (\mathbf{x, y})_{s_{0}} + \sum_{i, j}\mathbf{m}_{ij} -->
+  <!-- $$ -->
 
 # Linking %>% let data interact
 
 > Linking between plots builds a reactive brushing chain that when the data points
 on one plot are brushed, then they are highlighted on all the plots.
 
-**A rich story beyond the context of time...**
+**A rich story beyond the context of time ......**
 
 * Multiple time series plot
 * Parallel coordinate plot
