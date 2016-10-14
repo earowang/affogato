@@ -23,20 +23,24 @@ output:
 Xiaoyue Cheng, Dianne Cook & Heike Hofmann
 </center>
 
-* Layering to create a plot
-      <center>
-![](figure/melb_map.png)
-      </center>
-    + A map consists of four layers: polygon, googlemaps, path, and point layer.
-    + Temporal data composes of point, line, and area layers.
-* Interactivity
-    - Common interactions for all plot types: brushing, selection, linking, zooming, panning, and querying
-    - Some special interactions for temporal data: wrapping, faceting, mirroring, shifting, and switching
-* Linking 
-    - Self-linking
-    - Linking between plots
+## Summary
 
-# Melbourne pedestrian sensors 
+* Exploring aspects of time series
+    + Irregular periods
+    + Unusual events
+    + Symmetry of peaks and troughs
+* Comparing multiple time series
+    + Matching locations of peaks
+* Exploring individuals in longitudinal data
+    + Grouping temporal patterns
+    + Linking to associated information, e.g. geographic location or age, gender
+* Software: `cranvastime`
+
+## Key innovation
+
+* Interactive graphics for temporal data via linear algebra
+
+# My example: Melbourne pedestrian sensors 
 
 ```{r initial, echo = F, cache = F, results = 'hide'}
 opts_chunk$set(warning = FALSE, message = FALSE,
@@ -53,7 +57,7 @@ read_chunk('../scriptsR/interactive.R')
 ```{r leaflet, echo = FALSE, fig.width = 18}
 ```
 
-## A glimpse at pedestrian traffic
+# A glimpse at pedestrian traffic (made with plotly)
 
 ```{r plotly, echo = FALSE}
 ```
@@ -67,13 +71,26 @@ read_chunk('../scriptsR/interactive.R')
 ![](figure/robot_dance.gif)
 </center>
 
-Most movements/interactions can be formulated into algebra.
+
+# Special interactions for temporal data
+
++ Wrapping
++ Faceting
++ Mirroring
++ Shifting
++ Switching
+
+**Most movements/interactions can be formulated into linear algebra.**
+
 $$
 \mathbf{m}_{ij} = f_{i}(\mathbf{p}_i, \mathbf{u}_{ij}, \mathbf{l}_{ij}, j, 
 (\mathbf{x, y})_{0})
 $$
 
-* Wrapping: change x/y-coordinates of the data
+# Wrapping: change x/y-coordinates of the data
+
+## How x-wrapping works
+
   $$
   \mathbf{m}_{ij} = \begin{cases}
   (-\left(\left[\frac{\mathbf{x} - x_{(1)} + 1}{\Delta_{n-j}}\right] - 1\right) 
@@ -82,14 +99,29 @@ $$
   \times \Delta_{3}, 0) & j \ge n - 2
   \end{cases}
   $$
-    + x-wrapping: explore seasonality and temporal dependence 
-      <center>
+
+  <center>
+![](figure/melb0.png)
+![](figure/melb1.png)
+  </center>
+
+# x-wrapping
+
+## Explore seasonality and temporal dependence 
+  <center>
 ![](figure/xwrapping.gif)
-      </center>
-    + y-wrapping: compare magnitude of peaks and troughs 
-      <center>
+  </center>
+
+# y-wrapping
+
+## Compare magnitude of peaks and troughs 
+  <center>
 ![](figure/ywrapping.gif)
-      </center>
+  </center>
+
+
+# Switching & Mirroring
+
 * Switching: switch between line and area displays
 * Mirroring: vertically split series at a specified value and flip the bottom half
   across this axis
@@ -102,6 +134,9 @@ $$
       <center>
 ![](figure/area-mirror.gif)
       </center>
+
+# Faceting & Shifting
+
 * Faceting: create small multiples
   $$
   \mathbf{m}_{ij} = \begin{cases}
@@ -134,7 +169,7 @@ $$
 > Linking between plots builds a reactive brushing chain that when the data points
 on one plot are brushed, then they are highlighted on all the plots.
 
-**A rich story beyond the context of time ......**
+## A rich story beyond the context of time ......
 
 * Multiple time series plot
 * Parallel coordinate plot
@@ -148,3 +183,20 @@ on one plot are brushed, then they are highlighted on all the plots.
 <!-- <center> -->
 <!-- <img src="figure/linking.gif" alt="linking" height="85%" width="85%"> -->
 <!-- </center> -->
+
+
+# Wrap-up
+
+## What do I learn from the paper?
+
+* Use linear algebra to make time series plots interactive 
+* Linking between time series plots and other plots is done using categorical key
+
+## What do I learn from the data?
+
+* Different sensors exhibit different pedestrian traffic patterns.
+* The locations of sensors are not ideal for the study of pedestrian flow.
+
+<center>
+![](figure/melb_map.png)
+</center>
