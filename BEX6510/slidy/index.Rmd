@@ -11,6 +11,15 @@ output:
     footer: "LICENSE: CC BY-NC 3.0 US"
 ---
 
+```{r initial, echo = F, cache = F, results = 'hide'}
+opts_chunk$set(warning = FALSE, message = FALSE,
+			   fig.path = 'figure/', cache.path = 'cache/', 
+			   fig.align = 'center', dev = 'png', fig.width = 15, fig.height = 8, 
+			   fig.show = 'hold', cache = FALSE, external = TRUE,
+         dev = 'CairoPNG')
+read_chunk('../scriptsR/interactive.R')
+```
+
 # Overview of the paper
 
 <!-- <center><img src="figure/cranvas_paper.png" alt="cranvas" style="width: 85%; height: 800px"/></center> -->
@@ -30,26 +39,18 @@ Xiaoyue Cheng, Dianne Cook & Heike Hofmann
     + Unusual events
     + Symmetry of peaks and troughs
 * Comparing multiple time series
-    + Matching locations of peaks
+    + Matching locations of peaks and valleys 
 * Exploring individuals in longitudinal data
     + Grouping temporal patterns
     + Linking to associated information, e.g. geographic location or age, gender
 * Software: `cranvastime`
 
-## Key innovation
+## Key innovations
 
 * Interactive graphics for temporal data via linear algebra
+* Linking between time series plots and other plots
 
 # My example: Melbourne pedestrian sensors 
-
-```{r initial, echo = F, cache = F, results = 'hide'}
-opts_chunk$set(warning = FALSE, message = FALSE,
-			   fig.path = 'figure/', cache.path = 'cache/', 
-			   fig.align = 'center', dev = 'png', fig.width = 15, fig.height = 8, 
-			   fig.show = 'hold', cache = FALSE, external = TRUE,
-         dev = 'CairoPNG')
-read_chunk('../scriptsR/interactive.R')
-```
 
 ```{r setup, echo = FALSE, results = 'hide'}
 ```
