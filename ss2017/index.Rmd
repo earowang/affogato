@@ -69,7 +69,7 @@ class: inverse, middle, center
 
 ---
 
-## Start with line plots
+## Snapshot with line plots
 
 ```{r line, fig.width = 10, fig.height = 8}
 ```
@@ -105,7 +105,7 @@ class: inverse, middle, center
 
 .left-column[
   ## Download
-  ## Dangerous zone
+  ## Warning!
 ]
 
 .right-column[
@@ -113,7 +113,7 @@ class: inverse, middle, center
 
 * Chunks of missingness in serveral sensors
 
-* Unexpected behaviours dominates the pattern in some sensors
+* Unexpected behaviours dominates the patterns in some sensors
 ]
 
 ---
