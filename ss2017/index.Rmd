@@ -94,7 +94,7 @@ class: inverse, middle, center
 ]
 
 .right-column[
-* Open data Melbounre
+* Open data Melbourne
 
     + [Pedestrian counts](https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-volume-updated-monthly-/b2ak-trbp)
 
@@ -109,11 +109,11 @@ class: inverse, middle, center
 ]
 
 .right-column[
-* Not that big but *bigish* spatio-temporal data
+* Not that big but **bigish** spatio-temporal data
 
 * Chunks of missingness in serveral sensors
 
-* Unexpected behaviours dominates the patterns in some sensors
+* Unexpected behaviours dominate the patterns in some sensors
 ]
 
 ---
