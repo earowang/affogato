@@ -16,6 +16,11 @@ class: inverse, middle, center
 
 ## It's likely that everyone in the room </br> is part of the data.
 
+???
+
+What makes this data set interesting or appealing is that everybody in this
+room contributes at least a little to the data.
+
 ---
 
 layout: false
@@ -34,7 +39,8 @@ read_chunk('ss2017.R')
 ```
 
 .left-column[
-  ## Pedestrian Sensors
+  ## Pedestrian
+  ### - Sensors
 ]
 
 .right-column[
@@ -47,11 +53,21 @@ at hourly intervals since 2009. There have been 43 sensors installed till Novemb
 ```
 ]
 
+???
+
+How do you get recorded? Until most recent, there have been 43 sensors installed
+to count pedestrians walking by across the downtown every hour since 2009.
+
+This map shows the sensor locations. We can see Southern Cross Station and 
+Burke Street Mall, etc. We would expect to see different pedestrian patterns
+in the train stations and in the shopping mall.
+
 ---
 
 .left-column[
-  ## Pedestrian Sensors
-  ## Pedestrian Counts
+  ## Pedestrian
+  ### - Sensors
+  ### - Counts
 ]
 
 .right-column[
@@ -61,11 +77,22 @@ at hourly intervals since 2009. There have been 43 sensors installed till Novemb
 ```
 ]
 
+???
+
+This is how the data looks like. I only take a slice of the data, Feb 2016 here.
+
+Date time attributes, Sensor IDs and their names. Most importantly, pedestrian
+counts at every hour.
+
 ---
 
 class: inverse, middle, center
 
 ## Quick warmup with two little examples
+
+???
+
+I'm giving you two basic plots of this data to let you take off later.
 
 ---
 
@@ -74,12 +101,20 @@ class: inverse, middle, center
 ```{r line, fig.width = 10, fig.height = 8}
 ```
 
+???
+
+For temporal data or time series data, we usually get straight to line plots.
+
 ---
 
 ## Small multiples by weekdays
 
 ```{r facet, fig.width = 10, fig.height = 8}
 ```
+
+???
+
+We can slice these lines into multiple pieces.
 
 ---
 
@@ -101,6 +136,11 @@ class: inverse, middle, center
     + [Pedestrian sensor locations](https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-sensor-locations/ygaw-6rzq)
 ]
 
+???
+
+Where's to download the data? Pedestrian data is the one of data projects host
+on Open data Melbourne.
+
 ---
 
 .left-column[
@@ -115,6 +155,13 @@ class: inverse, middle, center
 
 * Unexpected behaviours dominate the patterns in some sensors
 ]
+
+???
+
+Friendly reminder.
+
+Instead of working on the whole data set, Would suggest to work on the data after 
+2013.
 
 ---
 
