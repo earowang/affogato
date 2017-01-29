@@ -1,0 +1,125 @@
+---
+title: "Melbourne Pedestrian Sensor Data"
+author: "Earo Wang"
+institution: "Dept. of EBS, Monash University"
+date: "Jan 30, 2017"
+output:
+  xaringan::moon_reader:
+    css: ["default", "myremark.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, middle, center
+
+## It's likely that everyone in the room </br> is part of the data.
+
+---
+
+layout: false
+
+```{r setup, include = FALSE, echo = FALSE}
+options(htmltools.dir.version = FALSE)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+			   fig.path = 'figure/', cache.path = 'cache/', 
+			   fig.align = 'center', dev = 'png', fig.width = 8, fig.height = 6, 
+			   fig.show = 'hold', cache = FALSE, external = TRUE,
+         dev = 'CairoPNG')
+read_chunk('ss2017.R')
+```
+
+```{r load}
+```
+
+.left-column[
+  ## Pedestrian Sensors
+]
+
+.right-column[
+
+The City of Melbourne has set up sensors counting pedestrians across the city
+at hourly intervals since 2009. There have been 43 sensors installed till November,
+2016.
+
+```{r leaflet}
+```
+]
+
+---
+
+.left-column[
+  ## Pedestrian Sensors
+  ## Pedestrian Counts
+]
+
+.right-column[
+* The data structure
+
+```{r ped-print}
+```
+]
+
+---
+
+class: inverse, middle, center
+
+## Quick warmup with two little examples
+
+---
+
+## Start with line plots
+
+```{r line, fig.width = 10, fig.height = 8}
+```
+
+---
+
+## Small multiples by weekdays
+
+```{r facet, fig.width = 10, fig.height = 8}
+```
+
+---
+
+class: inverse, middle, center
+
+## Your turn
+
+---
+
+.left-column[
+  ## Download
+]
+
+.right-column[
+* Open data Melbounre
+
+    + [Pedestrian counts](https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-volume-updated-monthly-/b2ak-trbp)
+
+    + [Pedestrian sensor locations](https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-sensor-locations/ygaw-6rzq)
+]
+
+---
+
+.left-column[
+  ## Download
+  ## Dangerous zone
+]
+
+.right-column[
+* Not that big but *bigish* spatio-temporal data
+
+* Chunks of missingness in serveral sensors
+
+* Unexpected behaviours dominates the pattern in some sensors
+]
+
+---
+
+class: inverse, middle, center
+
+## Happy hacking data!
+
+Slides on <http://bit.ly/ss2017-ped>
