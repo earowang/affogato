@@ -1,0 +1,172 @@
+---
+title: "Melbourne Pedestrian Sensor Data"
+author: "Earo Wang"
+institution: "Dept. of EBS, Monash University"
+date: "Jan 30, 2017"
+output:
+  xaringan::moon_reader:
+    css: ["default", "myremark.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+class: inverse, middle, center
+
+## It's likely that everyone in the room </br> is part of the data.
+
+???
+
+What makes this data set interesting or appealing is that everybody in this
+room contributes at least a little to the data.
+
+---
+
+layout: false
+
+```{r setup, include = FALSE, echo = FALSE}
+options(htmltools.dir.version = FALSE)
+opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+			   fig.path = 'figure/', cache.path = 'cache/', 
+			   fig.align = 'center', dev = 'png', fig.width = 8, fig.height = 6, 
+			   fig.show = 'hold', cache = FALSE, external = TRUE,
+         dev = 'CairoPNG')
+read_chunk('ss2017.R')
+```
+
+```{r load}
+```
+
+.left-column[
+  ## Pedestrian
+  ### - Sensors
+]
+
+.right-column[
+
+The City of Melbourne has set up sensors counting pedestrians across the city
+at hourly intervals since 2009. There have been 43 sensors installed till November,
+2016.
+
+```{r leaflet}
+```
+]
+
+???
+
+How do you get recorded? Until most recent, there have been 43 sensors installed
+to count pedestrians walking by across the downtown every hour since 2009.
+
+This map shows the sensor locations. We can see Southern Cross Station and 
+Burke Street Mall, etc. We would expect to see different pedestrian patterns
+in the train stations and in the shopping mall.
+
+---
+
+.left-column[
+  ## Pedestrian
+  ### - Sensors
+  ### - Counts
+]
+
+.right-column[
+* The data structure
+
+```{r ped-print}
+```
+]
+
+???
+
+This is how the data looks like. I only take a slice of the data, Feb 2016 here.
+
+Date time attributes, Sensor IDs and their names. Most importantly, pedestrian
+counts at every hour.
+
+---
+
+class: inverse, middle, center
+
+## Quick warmup with two little examples
+
+???
+
+I'm giving you two basic plots of this data to let you take off later.
+
+---
+
+## Snapshot with line plots
+
+```{r line, fig.width = 10, fig.height = 8}
+```
+
+???
+
+For temporal data or time series data, we usually get straight to line plots.
+
+---
+
+## Small multiples by weekdays
+
+```{r facet, fig.width = 10, fig.height = 8}
+```
+
+???
+
+We can slice these lines into multiple pieces.
+
+---
+
+class: inverse, middle, center
+
+## Your turn
+
+---
+
+.left-column[
+  ## Download
+]
+
+.right-column[
+* Open data Melbourne
+
+    + [Pedestrian counts](https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-volume-updated-monthly-/b2ak-trbp)
+
+    + [Pedestrian sensor locations](https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-sensor-locations/ygaw-6rzq)
+]
+
+???
+
+Where's to download the data? Pedestrian data is the one of data projects host
+on Open data Melbourne.
+
+---
+
+.left-column[
+  ## Download
+  ## Warning!
+]
+
+.right-column[
+* Not that big but **bigish** spatio-temporal data
+
+* Chunks of missingness in serveral sensors
+
+* Unexpected behaviours dominate the patterns in some sensors
+]
+
+???
+
+Friendly reminder.
+
+Instead of working on the whole data set, Would suggest to work on the data after 
+2013.
+
+---
+
+class: inverse, middle, center
+
+## Happy hacking data!
+
+Slides on <http://bit.ly/ss2017-ped>
